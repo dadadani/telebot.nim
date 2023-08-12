@@ -86,7 +86,7 @@ proc copyMessage*(b: TeleBot, chatId, fromChatId: string, messageId: int, messag
                   captionEntities: seq[MessageEntity] = @[], disableNotification = false, protectContent = false,
                   replyToMessageId = 0, allowSendingWithoutReply = false, replyMarkup: KeyboardMarkup = nil): Future[MessageId] {.api, async.}
 
-proc sendChatAction*(b: TeleBot, chatId: ChatId, action: ChatAction, messageThreadId = 0): Future[void] {.api, async.}
+proc sendChatAction*(b: TeleBot, chatId: ChatId, action: ChatAction, messageThreadId = 0): Future[bool] {.api, async.}
 
 proc getUserProfilePhotos*(b: TeleBot, userId: int, offset = 0, limit = 100): Future[UserProfilePhotos] {.api, async.}
 
