@@ -65,14 +65,14 @@ proc sendAnimation*(b: TeleBot, chatId: ChatId, animation: InputFileOrString, me
                    disableNotification = false, protectContent = false, replyToMessageId = 0,
                    allowSendingWithoutReply = false, replyMarkup: KeyboardMarkup = nil): Future[Message] {.api, async.}
 
-proc sendPoll*(b: TeleBot, chatId: ChatId, question: string, options: seq[string], messageThreadId = 0, isAnonymous = false, kind = "",
+proc sendPoll*(b: TeleBot, chatId: ChatId, question: string, options: seq[string], isAnonymous: bool, messageThreadId = 0, kind = "",
                allowsMultipleAnswers = false, correctOptionId = 0, explanation = "", explanationParseMode = "",
                explanationEntities: seq[MessageEntity] = @[], openPeriod = 0, closeDate = 0, isClosed = false, disableNotification = false,
                protectContent = false, replyToMessageId = 0, allowSendingWithoutReply = false, replyMarkup: KeyboardMarkup = nil): Future[Message] {.api, async.}
 
 proc sendDice*(b: TeleBot, chatId: ChatId, messageThreadId = 0, emoji = "", disableNotification = false, protectContent = false, replyToMessageId = 0,
                allowSendingWithoutReply = false, replyMarkup: KeyboardMarkup = nil): Future[Message] {.api, async.}
-
+  
 proc getMe*(b: TeleBot): Future[User] {.api, async.}
   ## Returns basic information about the bot in form of a ``User`` object.
 
