@@ -126,7 +126,7 @@ type
     thumbnail*: Option[PhotoSize]
     emoji*: Option[string]
     setName*: Option[string]
-    premiumAnimation*: Option[File]
+    premiumAnimation*: Option[FileObj]
     maskPosition*: Option[MaskPosition]
     customEmojiId*: Option[string]
     needsRepainting*: Option[bool]
